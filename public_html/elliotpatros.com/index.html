@@ -1,8 +1,53 @@
-<html>
+<!DOCTYPE html>
+<html lang="en-US">
 <head>
-	<title>emp</title>
+  <meta charset="utf-8">
+  <meta name="viewport" 
+        content="width=device-width, initial-scale=1.0">
+  <title>Elliot Patros</title>
+  <link rel="stylesheet" href="main.css">
 </head>
+  
 <body>
-<p>site is under construction</p>
+<div>
+  <!--  menu  -->
+  <nav>
+    <ul class="topnav" id="nav_main">
+      <li><a class="active" 
+             href="index.html">home</a>
+      </li>
+      <li><a href="#projects">projects</a></li>
+      <li><a href="#about">about</a></li>
+      <li><a href="#contact">contact</a></li>
+      <li class="nav_icon">
+          <a class="nav_icon_link"
+             href="javascript:void(0);"
+             onclick="nav_dropMenu()">menu</a>
+      </li>
+    </ul>
+  </nav>
+    
+  <!--  main  -->
+  <h2>Elliot Patros</h2>
+  <p>
+    site is under construction. this site is under construction. site is under construction. this site is under construction. site is under construction. this site is under construction. site is under construction. this site is under construction. site is under construction. this site is under construction. site is under construction. this site is under construction. site is under construction. this site is under construction. site is under construction. this site is under construction. site is under construction. this site is under construction. site is under construction. this site is under construction. site is under construction. this site is under construction. 
+  </p>
+  
+  <!--  footer  -->
+  <footer>Copyright &copy; elliotpatros.com</footer>
+</div>
+  
+<!--  javascript  -->
+<script>
+function nav_dropMenu() {
+  var x = document.getElementById("nav_main");
+  if (x.className === "topnav") {
+      x.className += " responsive";
+  } else {
+      x.className = "topnav";
+  }
+}
+</script>
+  
 </body>
 </html>
