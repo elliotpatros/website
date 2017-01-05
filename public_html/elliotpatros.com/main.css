@@ -1,6 +1,8 @@
 :root {
   --h-margin: 6em;
   --min-width: 12em;
+	--menu-color: #555;
+	--menu-hover: #7a7b7e;
 }
 
 html {background: #ecedef; }
@@ -9,9 +11,9 @@ body {
 	background: white;
 	font-family: "Helvetica Neue", Arial, sans-serif;
 	
-	margin: 0 var(--h-margin); /* 1em;*/
+	margin: 0 auto;
   padding: 0;
-	position: absolute; /* keep body flush with top of page */
+	width: 90%;
 	
 	-mox-box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
   -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
@@ -38,7 +40,7 @@ p {
 footer {
   padding: 0.6em 2em;
   color: rgba(255, 255, 255, 0.85);
-  background-color: #555;
+  background: var(--menu-color);
   clear: left;
   text-align: center;
   font-size: 0.9em;
@@ -50,13 +52,15 @@ nav ul.topnav {
 	left: var(--h-margin);
 	right: var(--h-margin);
 	
-	margin: 0;
+	margin: 0 auto;
 	padding: 0;
-	
 	position: fixed;
 	top: 0;
 	
-	background: #555;
+	width: 90%;
+	left: 5%;
+	
+	background: var(--menu-color);
 	overflow: hidden;
 	list-style: none;
 }
@@ -79,16 +83,16 @@ nav ul.topnav li a {
 	color: white;
 }
 
-nav ul.topnav li a:hover {background-color: #7a7b7e; }
-nav ul.topnav li a.active:hover {background-color: #7a7b7e; }
-nav ul.topnav li a.active {background-color: #d3240d; }
+nav ul.topnav li a:hover {background: var(--menu-hover); }
+nav ul.topnav li a.active:hover {background: var(--menu-hover); }
+nav ul.topnav li a.active {background: #d3240d; }
 
 
 /* changes for small screens */
 @media (max-width: 600px) {
 	body {
 		margin: 0;
-		
+		width: 100%;
 		-mox-box-shadow: none;
 		-webkit-box-shadow: none;
 		box-shadow: none;
@@ -99,6 +103,8 @@ nav ul.topnav li a.active {background-color: #d3240d; }
 	nav ul.topnav {
 		left: 0;
 		right: 0;
+		width: 100%;
+		left: 0;
 	}
 	nav ul.topnav li {
 		width: 50%;
@@ -124,7 +130,7 @@ nav ul.topnav li a.active {background-color: #d3240d; }
 		position: absolute;
 		right: 0;
 		top: 0;
-		background: #555;
+		background: var(--menu-color);
 	}
 	nav ul.topnav.open li a {
 		display: block;
