@@ -3,39 +3,38 @@
   --min-width: 12em;
 }
 
-html {
-  background: #ecedef;
-}
+html {background: #ecedef; }
 
 body {
-  background: white;
-  font-family: "Helvetica Neue", sans-serif;
-  
-  margin: 0 var(--h-margin) 1em;
+	background: white;
+	font-family: "Helvetica Neue", Arial, sans-serif;
+	
+	margin: 0 var(--h-margin); /* 1em;*/
   padding: 0;
-  min-width: var(--min-width);
-  
-  -mox-box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
+	position: absolute; /* keep body flush with top of page */
+	
+	-mox-box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
   -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
 }
 
-
-/* text blocks */
+/* body/text elements */
 h2 {
-  padding: 2em 1em 0em;
-  text-align: left;
+	padding: 1.5em 1em 0em;
+	text-align: center;
 }
 
 p {
-  margin: 0px;
-  padding: 0em 1em 1em;
-  font-size: 1em;
-  font-weight: 300;
-  line-height: 1.25;
-  color: rgba(0, 0, 0, 0.75);
+	margin: 0;
+	padding: 0 1em 1em;
+	font-size: 1em;
+	font-weight: 300;
+	line-height: 1.2;
+	color: rgba(0, 0, 0, 0.75);
 }
 
+
+/* footer */
 footer {
   padding: 0.6em 2em;
   color: rgba(255, 255, 255, 0.85);
@@ -46,92 +45,92 @@ footer {
   font-weight: 200;
 }
 
-/* menu element */
+/* menu stuff */
 nav ul.topnav {
-  left: var(--h-margin);
-  right: var(--h-margin);
-  
-  margin: 0;
-  padding: 0;
-  min-width: var(--min-width);
-  
-  position: fixed;
-  top: 0;
-  
-  background-color: #555;
-  overflow: hidden;
-  list-style: none;
+	left: var(--h-margin);
+	right: var(--h-margin);
+	
+	margin: 0;
+	padding: 0;
+	
+	position: fixed;
+	top: 0;
+	
+	background: #555;
+	overflow: hidden;
+	list-style: none;
 }
 
-
-/* menu list elements */
 nav ul.topnav li {
-  float: left;
-  width: 25%; /* 100% / 4-elements */
+	float: left;
+	width: 25%; /* 100% / 4-elements */
 }
 
-nav ul.topnav li.nav_icon {display: none; }
+nav ul.topnav li.nav_icon {
+	display: none; 
+}
 
-
-/* menu list element links */
 nav ul.topnav li a {
-  display: block;
-  padding: 0.6em 1.5em;
-  text-align: center;
-  text-decoration: none;
-  transition: 0.25s;
-  color: white;
+	display: block;
+	padding: 0.6em 1.5em;
+	text-align: center;
+	text-decoration: none;
+	transition: 0.35s;
+	color: white;
 }
 
 nav ul.topnav li a:hover {background-color: #7a7b7e; }
 nav ul.topnav li a.active:hover {background-color: #7a7b7e; }
 nav ul.topnav li a.active {background-color: #d3240d; }
 
-/* responsive menu */
-@media screen and (max-width:40em) 
-{ /* when menu is inactive */
-  nav ul.topnav li:not(:first-child) 
-  { /* menu items other than "home" */
-    display: none;
-  }
-  nav ul.topnav li.nav_icon 
-  { /* three-lined menu icon */
-    float: right;
-    display: inline-block;
-  }
-  nav ul.topnav li 
-  {  /*both "home" and "icon" when menu is inactive*/
-    width: 50%;
-  }
-}
 
-@media screen and (max-width:40em) 
-{ /* when menu is active */
-  nav ul.topnav.responsive 
-  { /* dropdown menu element */
-    position: fixed;
-    left: var(--h-margin: 6em);
-  }
-  nav ul.topnav.responsive li.nav_icon 
-  { /* nav icon when dropped down */
-    position: absolute;
-    right: 0;
-    top: 0;
-    background-color: #555;
-    width: 50%
-  }
-  nav ul.topnav.responsive li 
-  { /* dropped down list elements */
-    float: none;
-    display: inline;
-  }
-  nav ul.topnav.responsive li a 
-  { /* dropped down list element links */
-    display: block;
-    text-align: left;
-  }
-  nav ul.topnav.responsive li a.nav_icon_link 
-  { /* nav icon link when dropped down */  
-    text-align: center;
-  }
+/* changes for small screens */
+@media (max-width: 600px) {
+	body {
+		margin: 0;
+		
+		-mox-box-shadow: none;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+	}
+	
+	
+	/* menu stuff (not open) */
+	nav ul.topnav {
+		left: 0;
+		right: 0;
+	}
+	nav ul.topnav li {
+		width: 50%;
+	}
+	nav ul.topnav li:not(:first-child) {
+		display: none;
+	}
+	nav ul.topnav li.nav_icon {
+		float: right;
+		display: block;
+	}
+	
+	/* menu stuff (open) */
+	nav ul.topnav.open {
+		position: fixed;
+		left: 0;
+	}
+	nav ul.topnav.open li {
+		float: none;
+		display: inline;
+	}
+	nav ul.topnav.open li.nav_icon {
+		position: absolute;
+		right: 0;
+		top: 0;
+		background: #555;
+	}
+	nav ul.topnav.open li a {
+		display: block;
+		text-align: left;
+	}
+	nav ul.topnav.open li a.nav_icon_link {
+		text-align: center;
+	}
 }

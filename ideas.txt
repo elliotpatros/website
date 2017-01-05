@@ -1,0 +1,4 @@
+• live resume: sort by keywords, tools, date, etc.
+
+website structure:
+code, downloads, (research?) bio, contact, cv/resume, 
