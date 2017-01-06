@@ -22,19 +22,32 @@ body {
 
 /* body/text elements */
 h1 {
-	padding: 1.5em 1em 0em;
-	text-align: center;
-	font-size: 1.5em;
-	font-weight: 400;
+	padding: 0.5em 0.7em 0.25em;
+	margin: 0;
+	text-align: left;
+	font-size: 1.4em;
+	font-weight: 200;
+}
+
+h1#top {
+	padding-top: 2.5em;
 }
 
 p {
 	margin: 0;
-	padding: 0 1em 1em;
-	font-size: 1em;
+	padding: 0 1em 0.65em;
 	font-weight: 300;
 	line-height: 1.2;
 	color: rgba(0, 0, 0, 0.75);
+}
+
+p#bottom {
+	padding-bottom: 1em;
+}
+
+a {
+	text-decoration: none;
+	text-align: left;
 }
 
 
@@ -80,13 +93,12 @@ nav ul.topnav li a {
 	display: block;
 	padding: 0.6em 1.5em;
 	text-align: center;
-	text-decoration: none;
 	transition: 0.35s;
 	color: white;
 }
 
 nav ul.topnav li a:hover {background: var(--menu-hover); }
-nav ul.topnav li a.active:hover {background: var(--menu-hover); }
+nav ul.topnav li a.active:hover {background: #ff1e00; }
 nav ul.topnav li a.active {background: #d3240d; }
 
 
