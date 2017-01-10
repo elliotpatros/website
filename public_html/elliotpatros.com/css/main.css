@@ -3,9 +3,12 @@
   --min-width: 12em;
 	--menu-color: #555;
 	--menu-hover: #7a7b7e;
+	--bg-color: #ecedef;
+	--active-color: #d3240d;
+	--active-hover: #ff1e00;
 }
 
-html {background: #ecedef; }
+html {background: var(--bg-color); }
 
 body {
 	background: white;
@@ -20,17 +23,29 @@ body {
 	box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
 }
 
+
 /* body/text elements */
-h1 {
-	padding: 0.5em 0.7em 0.25em;
+h1, h2 {
+	padding: 0.5em 0.625em 0.25em;
 	margin: 0;
 	text-align: left;
-	font-size: 1.4em;
+	font-size: 1.5em;
 	font-weight: 200;
 }
 
-h1#top {
-	padding-top: 2.5em;
+h2 {
+	font-size: 1em;
+	margin-left: 1em;
+	font-weight: 500;
+}
+
+#top {
+	padding-top: 2.25em;
+	transition: 0.35s;
+}
+
+#bottom {
+	padding-bottom: 1em;
 }
 
 p {
@@ -38,16 +53,51 @@ p {
 	padding: 0 1em 0.65em;
 	font-weight: 300;
 	line-height: 1.2;
-	color: rgba(0, 0, 0, 0.75);
 }
 
-p#bottom {
-	padding-bottom: 1em;
+p, dt, dd, li {
+	color: rgba(0, 0, 0, 0.75);
+	font-weight: 300;
 }
 
 a {
 	text-decoration: none;
 	text-align: left;
+	font-weight: 400;
+}
+
+
+/* iframe */
+iframe {
+	resize: both;
+	margin: -0.5em 1em 1em;
+	display: block;
+}
+
+/* rules */
+hr {
+	padding: 0;
+	margin: 0 0 0.35em;
+	border: 0;
+	height: 1px;
+	background-image: linear-gradient(to right, 
+		rgba(0, 0, 0, 0.75), 
+		rgba(0, 0, 0, 0));
+}
+
+
+/* code */
+pre {
+	margin: 0 4em;
+	padding: 0.65em;
+	background-color: #ddd;
+}
+
+code {
+	color: black;
+	font-size: 1.125em;
+	background: #ddd;
+	padding: 0 0.15em;
 }
 
 
@@ -56,11 +106,11 @@ footer {
   padding: 0.6em 2em;
   color: rgba(255, 255, 255, 0.85);
   background: var(--menu-color);
-  clear: left;
   text-align: center;
   font-size: 0.9em;
   font-weight: 200;
 }
+
 
 /* menu stuff */
 nav ul.topnav {
@@ -78,6 +128,17 @@ nav ul.topnav {
 	background: var(--menu-color);
 	overflow: hidden;
 	list-style: none;
+	border-bottom: 1px solid black;
+}
+
+ul.text, dl {
+	margin: 0 0 1em;
+	line-height: 1.25em;
+	list-style-position: outside;
+}
+
+dl {
+	padding: 0 1em;
 }
 
 nav ul.topnav li {
@@ -98,8 +159,8 @@ nav ul.topnav li a {
 }
 
 nav ul.topnav li a:hover {background: var(--menu-hover); }
-nav ul.topnav li a.active:hover {background: #ff1e00; }
-nav ul.topnav li a.active {background: #d3240d; }
+nav ul.topnav li a.active:hover {background: var(--active-hover); }
+nav ul.topnav li a.active {background: var(--active-color); }
 
 
 /* changes for small screens */
@@ -144,7 +205,6 @@ nav ul.topnav li a.active {background: #d3240d; }
 		position: absolute;
 		right: 0;
 		top: 0;
-		background: var(--menu-color);
 	}
 	nav ul.topnav.open li a {
 		display: block;

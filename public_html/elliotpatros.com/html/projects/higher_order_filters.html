@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"
+				content="width=device-width, initial-scale=1.0">
+	
+	<link rel="stylesheet" 
+				href="../../css/main.css">
+	<link rel="icon" 
+				type="image/icon" 
+				href="../../icons/favicon.ico"/>
+	<script type="text/javascript"
+					src="../../js/main_menu.js"></script>
+	
+	<title>Elliot Patros: higher order filter</title>
+</head>
+	
+<body>
+<div>
+  <!--  menu  -->
+  <nav>
+    <ul class="topnav" id="nav_main">
+      <li><a href="../index.html">home</a></li>
+      <li><a class="active" 
+						 href="../projects.html">projects</a></li>
+      <li><a href="../about.html">about</a></li>
+      <li><a href="../contact.html">contact</a></li>
+      <li class="nav_icon">
+          <a class="nav_icon_link"
+             href="javascript:void(0);"
+             onclick="nav_dropMenu()">menu</a></li>
+    </ul>
+  </nav>
+	
+
+	<!--	description  -->
+  <h1 id="top">higher order filter project</h1>	
+	<p>The <i>higher order filter project</i> is a collection of resonant filter objects for 
+		<a href="http://msp.ucsd.edu/software.html" 
+			 target="_blank">Miller Puckette's Pure Data</a> and 
+		<a href="https://cycling74.com/products/max/" 
+			 target="_blank">Max</a>. </p>
+	
+	<p>The goal of the HOFP is to provide musicians and sound designers with popular resonant filters that aren't easily found in patching environments. HOF objects are super efficient without sacrificing accuracy, and have intuitive user interfaces.</p>
+	
+	<p>All <i>higher order filter</i> objects come with in-app help patches.</p>
+
+	
+	<!--	links  -->
+	<br>
+	<h2>links</h2> <hr>
+	<ul class="text">
+		<li><a href="https://github.com/elliotpatros/Higher-Order-Filter-Project"
+				target="_blank">see the HOFP on github</a> - go to repository.</li>
+		<li><a href="../../download/hofp-mac.zip"
+				download>download .zip for mac</a> - precompiled 64-bit Pd object files.</li>
+		<li>download .zip for windows - coming soon.</li>
+	</ul>
+	
+
+	<!--  instructions	-->
+	<br>
+	<h2>mac installation</h2> <hr>
+	<ul class="text">
+		<li>Download and expand the appropriate .zip for your computer.</li>
+		<li>Copy the folder to <code>/Library/Pd/</code>, making new folders if they don't exist.
+		<li>Add "<code>/Library/Pd/hofp-mac</code>" to Pd's search paths <code>(Preferences >>> Path...)</code>.</li>
+		<li>click <code>Apply</code>, then <code>OK</code>, then restart Pd.</li>
+	</ul>
+	
+	
+	<!--	object overview  -->
+	<h2>object overview</h2> <hr>
+	
+	<!--	second-order  -->
+	<dl>
+		<dt><b>second-order filters:</b> 
+			<a href="https://github.com/elliotpatros/Higher-Order-Filter-Project/blob/master/highpass~.c"
+				 target="_blank">highpass~</a>,
+			<a href="https://github.com/elliotpatros/Higher-Order-Filter-Project/blob/master/lowpass~.c"
+				 target="_blank">lowpass~</a>,
+			<a href="https://github.com/elliotpatros/Higher-Order-Filter-Project/blob/master/bandpass~.c"
+				 target="_blank">bandpass~</a>,
+			<a href="https://github.com/elliotpatros/Higher-Order-Filter-Project/blob/master/notch~.c"
+				 target="_blank">notch~</a>, 
+			<a href="https://github.com/elliotpatros/Higher-Order-Filter-Project/blob/master/allpass~.c"
+				 target="_blank">allpass~</a>.</dt>
+		<dd>Biquad filters with variable frequency and Q.</dd>
+	</dl>
+	
+	<!--	equalizer  -->
+	<dl>
+		<dt><b>equalizer filters:</b>
+			<a href="https://github.com/elliotpatros/Higher-Order-Filter-Project/blob/master/highshelf~.c"
+				 target="_blank">highshelf~</a>,
+			<a href="https://github.com/elliotpatros/Higher-Order-Filter-Project/blob/master/lowshelf~.c"
+				 target="_blank">lowshelf~</a>,
+			<a href="https://github.com/elliotpatros/Higher-Order-Filter-Project/blob/master/peak~.c"
+				 target="_blank">peak~</a>.</dt>
+		<dd>Biquad filters with variable frequency, Q, and gain.</dd>
+	</dl>
+	
+	<!--	nth order  -->
+	<dl>
+		<dt><b>n<sup>th</sup> order filters:</b> 
+			<a href="https://github.com/elliotpatros/Higher-Order-Filter-Project/blob/master/fir~.c"
+				 target="_blank">fir~</a></dt>
+		<dd>Finite impulse response filter. Set coefficients dynamically by referencing table or array objects.</dd>
+	</dl>
+	
+	<p id="bottom"></p>
+	
+	
+  <!--  footer  -->
+  <footer>Copyright &copy; elliotpatros.com</footer>
+	
+</div>
+	
+</body>
+</html>
